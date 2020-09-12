@@ -4,7 +4,9 @@
     <color name="color_primary_dark">#232F34</color>
     <color name="color_primary_light">#4A6572</color>
     <color name="color_accent">#F9AA33</color>
+    <color name="white">#ffffff</color>
 
     <color name="color_icon_border">#101010</color>
-    <color name="color_primary_text">#101010</color>
+    <color name="color_primary_text">#000000</color>
+    <color name="color_view_background">#fafafa</color>
 </resources>

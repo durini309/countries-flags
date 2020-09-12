@@ -7,5 +7,7 @@
     <dimen name="text_size_medium_big">18sp</dimen>
     <dimen name="text_size_big_small">24sp</dimen>
     <dimen name="text_size_large">38sp</dimen>
+    <dimen name="list_item_height">72dp</dimen>
+    <dimen name="list_content_margin">8dp</dimen>
 
 </resources>

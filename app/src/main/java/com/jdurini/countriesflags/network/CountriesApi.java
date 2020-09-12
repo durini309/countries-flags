@@ -1,16 +1,16 @@
 package com.jdurini.countriesflags.network;
 
-import okhttp3.OkHttpClient;
-import retrofit2.converter.gson.GsonConverterFactory;
+import com.jdurini.countriesflags.models.CountriesResponse;
 
-public class CountriesApi {
-    private static final String API_BASE_URL = "https://mobile.xoom.com";
+import io.reactivex.Flowable;
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
 
-    public CountriesService CountriesApi() {
-        return new retrofit2.Retrofit.Builder()
-                .baseUrl(API_BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(CountriesService.class);
-    }
+public interface CountriesApi {
+    @GET("/catalog/v2/countries")
+    Flowable<CountriesResponse> getCountries(
+            @Query("page") int page,
+            @Query("page_size") int pageSize
+    );
 }

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.jdurini.countriesflags.HomeFragment"
+        android:name="com.jdurini.countriesflags.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/flagsFragment"
-        android:name="com.jdurini.countriesflags.FlagsFragment"
+        android:name="com.jdurini.countriesflags.ui.countries.CountriesFragment"
         android:label="fragment_flags"
-        tools:layout="@layout/fragment_flags" />
+        tools:layout="@layout/fragment_countries" />
 </navigation>

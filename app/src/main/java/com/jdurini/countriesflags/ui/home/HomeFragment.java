@@ -1,4 +1,4 @@
-package com.jdurini.countriesflags;
+package com.jdurini.countriesflags.ui.home;
 
 import android.os.Bundle;
 
@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.android.material.button.MaterialButton;
+import com.jdurini.countriesflags.R;
 
 public class HomeFragment extends Fragment {
 

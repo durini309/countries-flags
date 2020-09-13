@@ -18,12 +18,10 @@ import io.reactivex.schedulers.Schedulers;
 
 public class CountriesViewModel extends ViewModel {
 
-    // If we want longer/shorter responses, we should change this constant
-    private final static int PAGE_SIZE = 20;
     private final CountriesApi apiService;
     private boolean finishedFetching = false;
 
-    public MutableLiveData<List<Country>> liveDataCountries;
+    public MutableLiveData<List<Country>> liveDataCountries = new MutableLiveData<>();;
 
     @Inject
     public CountriesViewModel(CountriesApi countriesApi) {
@@ -31,9 +29,8 @@ public class CountriesViewModel extends ViewModel {
     }
 
 
-    public LiveData<List<Country>> getCities(int currentPage) {
-        liveDataCountries = new MutableLiveData<>();
-        apiService.getCountries(currentPage, PAGE_SIZE)
+    public LiveData<List<Country>> getCountries(int currentPage, int pageSize) {
+        apiService.getCountries(currentPage, pageSize)
                 .toObservable()
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Observer<CountriesResponse>() {

@@ -26,6 +26,9 @@ import dagger.android.support.DaggerFragment;
 
 public class CountriesFragment extends DaggerFragment {
 
+    // If we want longer/shorter responses, we should change this constant
+    private final static int PAGE_SIZE = 20;
+
     private CountriesViewModel viewModel;
     private RecyclerView recyclerCountries;
     private ConstraintLayout layoutLoading;
@@ -84,7 +87,7 @@ public class CountriesFragment extends DaggerFragment {
     }
 
     private void getCountries(boolean firstFetch) {
-        viewModel.getCities(currentPage).observe(getViewLifecycleOwner(), countries -> {
+        viewModel.getCountries(currentPage, PAGE_SIZE).observe(getViewLifecycleOwner(), countries -> {
             if (countries != null) {
                 if (firstFetch) {
                     layoutLoading.setVisibility(View.GONE);

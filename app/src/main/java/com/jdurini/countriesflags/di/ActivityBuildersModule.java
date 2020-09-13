@@ -13,8 +13,6 @@ public abstract class ActivityBuildersModule {
 
     @ContributesAndroidInjector(
             modules = {
-                    CountriesViewModelsModule.class,
-                    MainModule.class,
                     MainFragmentsBuildersModule.class
             }
     )

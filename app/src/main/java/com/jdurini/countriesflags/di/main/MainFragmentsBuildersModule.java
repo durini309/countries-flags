@@ -8,6 +8,11 @@ import dagger.android.ContributesAndroidInjector;
 @Module
 public abstract class MainFragmentsBuildersModule {
 
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(
+            modules = {
+                    CountriesViewModelsModule.class,
+                    MainModule.class
+            }
+    )
     abstract CountriesFragment contributeCountriesFragment();
 }

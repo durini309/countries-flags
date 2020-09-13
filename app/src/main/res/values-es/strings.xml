@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Desafío de código</string>
+    <string name="dev_name">Juan Carlos Durini</string>
+    <string name="text_start">Iniciar</string>
+    <string name="downloading_flags">Descargando banderas</string>
+</resources>

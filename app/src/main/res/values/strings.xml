@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">CountriesFlags</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Code Challenge</string>
+    <string name="dev_name">Juan Carlos Durini</string>
+    <string name="text_start">Start</string>
+    <string name="downloading_flags">Downloading flags</string>
 </resources>

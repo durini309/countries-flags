@@ -9,7 +9,6 @@
         <item name="shapeAppearanceSmallComponent">@style/Shape.SmallComponent</item>
     </style>
 
-    <!-- region Buttons -->
     <style name="ButtonPrimaryBig" parent="Widget.MaterialComponents.Button">
         <item name="android:backgroundTint">@color/color_accent</item>
         <item name="android:textColor">@color/color_primary_text</item>

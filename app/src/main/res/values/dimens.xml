@@ -2,12 +2,15 @@
 <resources>
 
     <dimen name="height_button_big">56dp</dimen>
+    <dimen name="margin_components_small">8dp</dimen>
+    <dimen name="margin_components_medium">16dp</dimen>
     <dimen name="padding_button_inner">32dp</dimen>
     <dimen name="text_size_medium">16sp</dimen>
     <dimen name="text_size_medium_big">18sp</dimen>
-    <dimen name="text_size_big_small">24sp</dimen>
     <dimen name="text_size_large">38sp</dimen>
     <dimen name="list_item_height">72dp</dimen>
     <dimen name="list_content_margin">8dp</dimen>
+    <dimen name="list_image_height">56dp</dimen>
+    <dimen name="list_image_width">100dp</dimen>
 
 </resources>

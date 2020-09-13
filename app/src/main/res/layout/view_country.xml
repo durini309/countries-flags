@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/image_flag"
-        android:layout_width="100dp"
-        android:layout_height="56dp"
+        android:layout_width="@dimen/list_image_width"
+        android:layout_height="@dimen/list_image_height"
         android:layout_marginStart="@dimen/list_content_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -21,8 +21,6 @@ public class CountriesViewModel extends ViewModel {
     private final CountriesApi apiService;
     private boolean finishedFetching = false;
 
-    public MutableLiveData<List<Country>> liveDataCountries = new MutableLiveData<>();;
-
     @Inject
     public CountriesViewModel(CountriesApi countriesApi) {
         this.apiService = countriesApi;
@@ -30,6 +28,7 @@ public class CountriesViewModel extends ViewModel {
 
 
     public LiveData<List<Country>> getCountries(int currentPage, int pageSize) {
+        MutableLiveData<List<Country>> liveDataCountries = new MutableLiveData<>();
         apiService.getCountries(currentPage, pageSize)
                 .toObservable()
                 .subscribeOn(Schedulers.io())

@@ -31,6 +31,7 @@ public class CountriesFragment extends DaggerFragment {
     private ConstraintLayout layoutLoading;
     private boolean isFetching = false;
     private boolean finishedFetching = true;
+    private int currentPage = 1;
 
     @Inject
     CountryAdapter adapter;
@@ -83,7 +84,7 @@ public class CountriesFragment extends DaggerFragment {
     }
 
     private void getCountries(boolean firstFetch) {
-        viewModel.getCities().observe(getViewLifecycleOwner(), countries -> {
+        viewModel.getCities(currentPage).observe(getViewLifecycleOwner(), countries -> {
             if (countries != null) {
                 if (firstFetch) {
                     layoutLoading.setVisibility(View.GONE);
@@ -93,13 +94,14 @@ public class CountriesFragment extends DaggerFragment {
                     adapter.removeFetching();
                 }
                 adapter.addCountries(countries);
-
-                finishedFetching = viewModel.getFinishedFetching();
+                finishedFetching = viewModel.hasFinishedFetching();
 
                 // If pages are still remaining, we will show the loading item at the end
                 if (!finishedFetching) {
                     adapter.showFetching();
                 }
+
+                currentPage++;
             } else {
                 Toast.makeText(
                         getContext(),

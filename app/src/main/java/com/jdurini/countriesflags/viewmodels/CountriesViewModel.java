@@ -21,8 +21,9 @@ public class CountriesViewModel extends ViewModel {
     // If we want longer/shorter responses, we should change this constant
     private final static int PAGE_SIZE = 20;
     private final CountriesApi apiService;
-    private int currentPage = 1;
     private boolean finishedFetching = false;
+
+    public MutableLiveData<List<Country>> liveDataCountries;
 
     @Inject
     public CountriesViewModel(CountriesApi countriesApi) {
@@ -30,8 +31,8 @@ public class CountriesViewModel extends ViewModel {
     }
 
 
-    public LiveData<List<Country>> getCities() {
-        MutableLiveData<List<Country>> liveDataCountries = new MutableLiveData<>();
+    public LiveData<List<Country>> getCities(int currentPage) {
+        liveDataCountries = new MutableLiveData<>();
         apiService.getCountries(currentPage, PAGE_SIZE)
                 .toObservable()
                 .subscribeOn(Schedulers.io())
@@ -44,7 +45,6 @@ public class CountriesViewModel extends ViewModel {
                     public void onNext(CountriesResponse countriesResponse) {
                         liveDataCountries.postValue(countriesResponse.getCountries());
                         finishedFetching = currentPage >= countriesResponse.getTotalPages();
-                        currentPage++;
                     }
 
                     @Override
@@ -59,7 +59,7 @@ public class CountriesViewModel extends ViewModel {
         return liveDataCountries;
     }
 
-    public boolean getFinishedFetching() {
+    public boolean hasFinishedFetching() {
         return finishedFetching;
     }
 }
